@@ -1,3 +1,4 @@
+import { useRef, useEffect } from "react"
 import {
   CursorArrowRaysIcon,
   CloudArrowUpIcon,
@@ -36,8 +37,44 @@ const features = [
 ]
 
 export default function App() {
+  const pathRef = useRef<SVGPathElement>(null)
+  useEffect(() => {
+    if (pathRef.current) {
+      const pathLength = pathRef.current.getTotalLength()
+      pathRef.current.style.strokeDasharray = `${pathLength} ${pathLength}`
+      pathRef.current.style.strokeDashoffset = `${pathLength}`
+
+      window.addEventListener("scroll", () => {
+        // What % down is
+        let scrollPersentage =
+          (document.documentElement.scrollTop + document.body.scrollTop) /
+          (document.documentElement.scrollHeight - document.documentElement.clientHeight)
+        // length to offset the dashes
+        let drawLength = pathLength * scrollPersentage
+        // Draw in reverse
+        let dashOffset = pathLength - drawLength
+        if (pathRef.current) {
+          pathRef.current.style.strokeDashoffset = dashOffset.toString()
+        }
+      })
+      // return () => {
+      //   window.removeEventListener("scroll", handleScroll)
+      // }
+    }
+  }, [])
+
   return (
     <>
+      <div className="line-container">
+        <svg className="tray" viewBox="0 0 6 1007" fill="none" preserveAspectRatio="xMidYMax meet">
+          <path
+            ref={pathRef}
+            d="M3 2007C3 775.882 3 219.211 3 11.0541M3 11.0541C3 -58.317 3 -88.9804 3 -93L3 11.0541Z"
+            stroke="#EA580C"
+            strokeWidth="5px"
+          />
+        </svg>
+      </div>
       <Header />
       <HeaderSection />
       <div className="mx-auto bg-white">
