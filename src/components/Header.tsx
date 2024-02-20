@@ -56,9 +56,13 @@ export default function Header() {
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global">
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
-            <span className="sr-only">Your Company</span>
+          <a
+            href="#"
+            className="-m-1.5 p-1.5 flex justify-center items-center gap-3">
             <img className="h-8 w-auto" src="/logo.svg" alt="" />
+            <span className="text-orange-600 font-semibold">
+              Resume Creator
+            </span>
           </a>
         </div>
         <div className="flex lg:hidden">
@@ -100,6 +104,7 @@ export default function Header() {
                           aria-hidden="true"
                         />
                       </div>
+
                       <div className="flex-auto">
                         <a
                           href={item.href}
@@ -143,7 +148,7 @@ export default function Header() {
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
           <a
             href="#"
-            className="text-sm font-semibold leading-6 text-gray-900 bg-gradient-to-tl from-orange-500 to-orange-700 p-2 rounded text-white">
+            className="text-sm font-semibold leading-6 bg-gradient-to-tl from-orange-500 to-orange-700 p-2 text-white">
             Sign In
           </a>
           <a
