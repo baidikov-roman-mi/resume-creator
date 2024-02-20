@@ -51,21 +51,6 @@ export default function App() {
     <>
       <Header />
       <HeaderSection />
-      <div className="line-container">
-        <svg
-          width="5"
-          height="995"
-          viewBox="0 0 5 995"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            ref={pathRef}
-            d="M2.5 0V994.5"
-            stroke="black"
-            stroke-width="5"
-          />
-        </svg>
-      </div>
       <div className="mx-auto bg-white">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto my-10 max-w-2xl sm:mt-20 md:my-20 lg:my-24 lg:max-w-4xl">
