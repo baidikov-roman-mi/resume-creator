@@ -51,7 +51,7 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-gray-100">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global">
@@ -122,9 +122,9 @@ export default function Header() {
                     <a
                       key={item.name}
                       href={item.href}
-                      className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
+                      className="flex group items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100">
                       <item.icon
-                        className="h-5 w-5 flex-none text-gray-400"
+                        className="h-5 w-5 flex-none text-gray-400 group-hover:text-orange-600"
                         aria-hidden="true"
                       />
                       {item.name}
@@ -166,15 +166,18 @@ export default function Header() {
         <div className="fixed inset-0 z-10" />
         <Dialog.Panel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
-              <span className="sr-only">Your Company</span>
+            <a
+              href="#"
+              className="-m-1.5 p-1.5 flex justify-center items-center gap-3">
               <img className="h-8 w-auto" src="/logo.svg" alt="" />
+              <span className="text-orange-600 font-semibold">
+                Resume Creator
+              </span>
             </a>
             <button
               type="button"
               className="-m-2.5 rounded-md p-2.5 text-gray-700"
               onClick={() => setMobileMenuOpen(false)}>
-              <span className="sr-only">Close menu</span>
               <XMarkIcon className="h-6 w-6" aria-hidden="true" />
             </button>
           </div>

@@ -1,5 +1,4 @@
 const links = [
-  { name: "Open Templates", href: "#" },
   { name: "Watch Demo", href: "#" },
   { name: "FAQ", href: "#" },
   { name: "Contact Us", href: "#" },
@@ -12,7 +11,7 @@ const stats = [
 
 export default function HeaderSection() {
   return (
-    <div className="relative isolate overflow-hidden bg-gray-900 py-24 border-b-8 border-orange-600 sm:py-32">
+    <section className="relative isolate overflow-hidden bg-gray-900 py-24 border-b-8 border-orange-600 sm:py-32">
       <img
         src="https://images.unsplash.com/photo-1526040652367-ac003a0475fe?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt=""
@@ -42,23 +41,28 @@ export default function HeaderSection() {
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Your perfect resume in just 15 minutes
-          </h2>
+          </h1>
           <p className="mt-6 text-lg leading-8 text-gray-300">
             Looking for a quick and efficient way to create a resume? Let's
             start now!
           </p>
         </div>
-        <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+        <div className="mx-auto mt-4 max-w-2xl lg:mx-0 lg:max-w-none">
+          <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-center items-center font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
+            <button
+              type="submit"
+              className="flex-none rounded-md bg-orange-500 px-3 py-3 my-5 text-md font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">
+              Browse Templates
+            </button>
             {links.map((link) => (
               <a key={link.name} href={link.href}>
-                {link.name} <span aria-hidden="true">&rarr;</span>
+                {link.name}
               </a>
             ))}
           </div>
-          <dl className="mt-16 flex gap-10 sm:mt-20">
+          <dl className="flex gap-10 my-5">
             {stats.map((stat) => (
               <div key={stat.name} className="flex flex-col-reverse w-30">
                 <dt className="text-base leading-7 text-gray-300">
@@ -72,6 +76,6 @@ export default function HeaderSection() {
           </dl>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
