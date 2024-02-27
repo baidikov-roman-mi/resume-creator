@@ -147,7 +147,7 @@ export default function Header() {
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
           <a
-            href="#"
+            href="/sign"
             className="text-sm font-semibold leading-6 bg-gradient-to-tl from-orange-500 to-orange-700 p-2 text-white">
             Sign In
           </a>
