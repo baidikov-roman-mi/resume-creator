@@ -49,7 +49,7 @@ const mobileMenu = [
   { name: "FAQ", href: "#" },
   { name: "Share", href: "#" },
   { name: "Log in", href: "#" },
-  { name: "Sign in", href: "#" },
+  { name: "Sign in", href: "/" },
 ];
 
 function classNames(...classes: (string | undefined)[]) {
