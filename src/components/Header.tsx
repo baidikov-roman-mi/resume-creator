@@ -48,7 +48,7 @@ const mobileMenu = [
   { name: "Cover Letter", href: "#" },
   { name: "FAQ", href: "#" },
   { name: "Share", href: "#" },
-  { name: "Log in", href: "#" },
+  { name: "Log in", href: "/login" },
   { name: "Sign in", href: "/sign" },
 ];
 
@@ -161,7 +161,7 @@ export default function Header() {
             Sign In
           </a>
           <a
-            href="#"
+            href="/login"
             className="text-sm font-semibold leading-6 text-gray-900 p-2">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
