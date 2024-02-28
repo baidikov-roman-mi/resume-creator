@@ -1,6 +1,7 @@
 export default function NewsletterSection() {
   return (
-    <section className="relative overflow-hidden bg-white sm:py-12 lg:py-20">
+    // just edited paddings for tablets and less wide devices
+    <section className="relative overflow-hidden bg-white py-8 sm:py-10 lg:py-14">
       <div className="max-w-7xl p-2">
         <div className="mx-auto max-w-xl p-5 border-y-2 border-orange-600 lg:max-w-lg text-center">
           <h2 className="text-center mx-auto text-2xl font-extrabold leading-none tracking-tight text-gray-900 md:text-2xl lg:text-4xl">
