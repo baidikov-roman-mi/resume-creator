@@ -1,13 +1,4 @@
-const links = [
-  { name: "Watch Demo", href: "#" },
-  { name: "FAQ", href: "#" },
-  { name: "Contact Us", href: "#" },
-];
-const stats = [
-  { name: "Templates", value: "10" },
-  { name: "Downloads", value: "300" },
-  { name: "Users", value: "100" },
-];
+import { stats, links } from "../assets/lists";
 
 export default function HeaderSection() {
   return (
@@ -51,11 +42,13 @@ export default function HeaderSection() {
         </div>
         <div className="mx-auto mt-4 max-w-2xl lg:mx-0 lg:max-w-none">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 text-center items-center font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10">
-            <button
-              type="submit"
-              className="flex-none rounded-md bg-orange-500 px-3 py-3 my-5 text-md font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">
-              Browse Templates
-            </button>
+            <a href="/templates">
+              <button
+                type="submit"
+                className="flex-none rounded-md bg-orange-500 px-3 py-3 my-5 text-md font-semibold text-white shadow-sm hover:bg-orange-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-500">
+                Browse Templates
+              </button>
+            </a>
             {links.map((link) => (
               <a key={link.name} href={link.href}>
                 {link.name}
