@@ -9,9 +9,7 @@ const App = () => {
         <Suspense
           fallback={
             <section className="bg-orange-600">
-            <h1 className="text-black">
-              Loading...
-            </h1>
+              <h1 className="text-black">Loading...</h1>
             </section>
           }>
           <SetupRouter />

@@ -84,6 +84,15 @@ export const templates = [
     imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
     href: "#",
   },
+  // testing all 4 types of badges
+  {
+    tag: "Internship",
+    description: "Graduation hope",
+    imageSrc:
+      "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg",
+    imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
+    href: "#",
+  },
 ];
 
 // userGreeting list

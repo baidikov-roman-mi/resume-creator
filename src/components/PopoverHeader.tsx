@@ -1,9 +1,13 @@
 import { Fragment } from "react";
 // ui lib
-import { Popover, Transition } from "@headlessui/react";
+import { Popover, Transition, Disclosure } from "@headlessui/react";
 
 // heroicons
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
+
+function classNames(...classes: (string | undefined)[]) {
+  return classes.filter(Boolean).join(" ");
+}
 
 interface Props {
   title: string;
@@ -28,13 +32,48 @@ interface Props {
       } & React.RefAttributes<SVGSVGElement>
     >;
   }[];
+  type: string;
 }
-export default function PopoverHeaderMobile({
+
+export default function PopoverHeaderPC({
   title,
   popoverList,
   callsToAction,
+  type,
 }: Props) {
-  return (
+  const popoverHeaderPC = (
+    <>
+      <Disclosure as="div" className="-mx-3">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-orange-600">
+              {title}
+              <ChevronDownIcon
+                className={classNames(
+                  open ? "rotate-180" : "",
+                  "h-5 w-5 flex-none"
+                )}
+                aria-hidden="true"
+              />
+            </Disclosure.Button>
+            <Disclosure.Panel className="mt-2 space-y-2">
+              {[...popoverList, ...callsToAction].map((item) => (
+                <Disclosure.Button
+                  key={item.name}
+                  as="a"
+                  href={`coverletter${item.href}`}
+                  className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50 hover:text-orange-600">
+                  {item.name}
+                </Disclosure.Button>
+              ))}
+            </Disclosure.Panel>
+          </>
+        )}
+      </Disclosure>
+    </>
+  );
+
+  const PopoverHeaderMobile = (
     <>
       <Popover className="relative">
         <Popover.Button className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
@@ -97,4 +136,6 @@ export default function PopoverHeaderMobile({
       </Popover>
     </>
   );
+
+  return <>{type == "mobile" ? PopoverHeaderMobile : popoverHeaderPC}</>;
 }

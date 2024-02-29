@@ -7,8 +7,7 @@ import { Dialog, Popover } from "@headlessui/react";
 import { Bars3Icon as BurgerIco, XMarkIcon } from "@heroicons/react/24/outline";
 
 // components
-import PopoverHeaderMobile from "./PopoverHeaderMobile";
-import PopoverHeaderPC from "./PopoverHeaderPC";
+import PopoverHeader from "./PopoverHeader";
 
 // lists
 import { popoverList, callsToAction, mobileMenu } from "../assets/lists";
@@ -41,15 +40,17 @@ export default function Header() {
           </button>
         </div>
         <Popover.Group className="hidden lg:flex lg:gap-x-12">
-          <PopoverHeaderMobile
+          <PopoverHeader
             title="Resume"
             popoverList={popoverList}
             callsToAction={callsToAction}
+            type="mobile"
           />
-          <PopoverHeaderMobile
+          <PopoverHeader
             title="Cover Letter"
             popoverList={popoverList}
             callsToAction={callsToAction}
+            type="mobile"
           />
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
             FAQ
@@ -96,15 +97,17 @@ export default function Header() {
           </div>
           <div className="mt-6 flow-root">
             <div className="space-y-2 py-6">
-              <PopoverHeaderPC
+              <PopoverHeader
                 title="Resume"
                 popoverList={popoverList}
                 callsToAction={callsToAction}
+                type="PC"
               />
-              <PopoverHeaderPC
+              <PopoverHeader
                 title="Resume"
                 popoverList={popoverList}
                 callsToAction={callsToAction}
+                type="PC"
               />
               {mobileMenu.map((item) => (
                 <a
