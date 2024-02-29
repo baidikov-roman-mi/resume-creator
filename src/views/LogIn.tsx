@@ -1,7 +1,9 @@
+import { FaGoogle, FaFacebookF, FaGithub } from "react-icons/fa";
+
 export default function LogIn() {
   return (
     <>
-      <div className="flex max-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <a href="/">
             <img
@@ -10,7 +12,7 @@ export default function LogIn() {
               alt="Resume Creator"
             />
           </a>
-          <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             <span className="text-orange-600">Log in</span> to your account
           </h2>
           <hr className="my-5 border-orange-600 w-1/3 mx-auto border-2" />
@@ -66,11 +68,21 @@ export default function LogIn() {
             <div>
               <button
                 type="submit"
-                className="flex w-full justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
+                className="flex w-1/2 mx-auto justify-center rounded-md bg-orange-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600">
                 Log in
               </button>
             </div>
           </form>
+
+          <div className="separator text-black my-2"> or </div>
+          <h4 className="text-center text-l font-bold leading-9 tracking-tight text-gray-900">
+            <span className="text-orange-600">Log in</span> with
+          </h4>
+          <div className="flex justify-center items-center mx-auto my-4 text-orange-600 border-2 border-orange-600">
+            <FaGoogle className="text-3xl bg-white w-32 h-8 p-2 transition duration-150 hover:bg-orange-600 hover:text-gray-100" />{" "}
+            <FaFacebookF className="text-3xl bg-white w-32 h-8 p-2 transition duration-150 hover:bg-orange-600 hover:text-gray-100" />{" "}
+            <FaGithub className="text-3xl bg-white w-32 h-8 p-2 transition duration-150 hover:bg-orange-600 hover:text-gray-100" />
+          </div>
 
           <div className="mt-10 flex justify-between items-center text-sm text-gray-500">
             <p>
