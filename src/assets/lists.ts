@@ -59,8 +59,8 @@ export const mobileMenu = [
 // templates
 export const templates = [
   {
-    name: "Desk and Office",
-    description: "Work from home accessories",
+    tag: "Modern",
+    description: "Mike's Resume",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-01.jpg",
     imageAlt:
@@ -68,8 +68,8 @@ export const templates = [
     href: "#",
   },
   {
-    name: "Self-Improvement",
-    description: "Journals and note-taking",
+    tag: "Creative",
+    description: "Art world",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-02.jpg",
     imageAlt:
@@ -77,8 +77,8 @@ export const templates = [
     href: "#",
   },
   {
-    name: "Travel",
-    description: "Daily commute essentials",
+    tag: "Professional",
+    description: "To my boss",
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/home-page-02-edition-03.jpg",
     imageAlt: "Collection of four insulated travel bottles on wooden shelf.",
@@ -135,3 +135,10 @@ export const stats = [
   { name: "Downloads", value: "300" },
   { name: "Users", value: "100" },
 ];
+
+export const tagColors: { [key: string]: string } = {
+  Modern: "bg-orange-50",
+  Creative: "bg-lime-50",
+  Professional: "bg-blue-50",
+  Internship: "bg-red-50",
+};
